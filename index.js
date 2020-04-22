@@ -1,23 +1,22 @@
 var http = require('http');
 var fs = require('fs');
-var path = require('path');
 var extract = require('./extract');
 var wss = require('./websockets-server');
 const mime = require('mime');
-
+// part 1
 var handleError = function (err, res) {
-    // part 2 and 3
+    // part 3
     var test = [
-        'error.html', // html [0]
+        'error.html', // html [0] & part 2
         'pdf_sample.pdf', // pdf [1]
         'picture_sample.jpg', // picture [2]
         'sound_sample.mp3', // sound[3]
         'video_sample.mp4', // video [4]
         'plain_sample.txt' // plain text [5]
-    ]
+    ] // move to anotherpage
     var errPath = __dirname + '/app/' + test[0];
-    fs.readFile(errPath, function (err, data) {
-        if (err) {
+    fs.readFile(errPath, function (err, data) { 
+        if (err) { 
             throw err;
         } else {
             mimeTypeError = mime.getType(errPath);
@@ -37,7 +36,6 @@ var server = http.createServer(function (req, res) {
             handleError(err, res);
             return;
         } else {
-            // mime.getType(data);
             mimeType = mime.getType(filePath);
             console.log('MIME: ' + mimeType);
             res.setHeader('Content-Type', mimeType);
