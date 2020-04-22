@@ -1,6 +1,4 @@
-# CoffeeRunWithFirebase
-The Entire CoffeeRun Project with Firebase for the backend
-
+# ChattrboxWithNodeJS
 # Directions
 (1) Finish Chapter 15 <br>
 (2) Complete the Bronze Challenge: Creating a Custon Error Page with app/error.html with a picture of a cat from https://http.cat/404 <br>
